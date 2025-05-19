@@ -132,7 +132,7 @@ def get_response_from_dataframe(question, df, nb_eleves=3):
     code_ecole = extraire_filtre(question_lower, df['code_ecole'].astype(str).unique())
     ceb = extraire_filtre(question_lower, df['ceb_ecole'].astype(str).unique())
     commune = extraire_filtre(question_lower, df['commune_ecole'].astype(str).unique())
-    ecole_id = extraire_filtre(question_lower, df['ecole_id'].astype(str).unique())
+    #ecole_id = extraire_filtre(question_lower, df['ecole_id'].astype(str).unique())
 
     # 🔍 Si recherche par élève
     if id_eleve or identifiant_unique:
@@ -158,7 +158,7 @@ def get_response_from_dataframe(question, df, nb_eleves=3):
     if code_classe: filtres.append(df['code_classe'].astype(str) == str(code_classe))
     if nom_classe: filtres.append(df['nom_classe'].str.lower() == nom_classe.lower())
     if id_classe: filtres.append(df['id_classe'].astype(str) == str(id_classe))
-    if ecole_id: filtres.append(df['ecole_id'].astype(str) == str(ecole_id))
+    #if ecole_id: filtres.append(df['ecole_id'].astype(str) == str(ecole_id))
 
     if filtres:
         from functools import reduce
