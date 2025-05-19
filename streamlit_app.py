@@ -1,25 +1,18 @@
 import os
 import re
-import pickle
+import pandas as pd
 import streamlit as st
 from collections import defaultdict
 from itertools import islice
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 from langchain.chat_models import ChatOpenAI
-#from langchain.chat_models import ChatOpenAI
-from proccessing import get_df_merge_final
+
 
 st.set_page_config(page_title="🎓 Analyse Scolaire", layout="centered")
 st.title("🎓 Chatbot Scolaire - Analyse des Performances")
 
 # ✅ Chargement et cache des données
-@st.cache_data
-def load_data():
-    return get_df_merge_final()
-    
-
-df = load_data()
-
+df=pd.read_csv("https://raw.githubusercontent.com/SomaDjakiss/Projet_ChatBot_Kix_Seeds/main/data_proccessing.csv",encoding="ISO-8859-1",sep=";")
 # ✅ Chargement de la clé API OpenAI depuis les secrets Streamlit
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 
