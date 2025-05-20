@@ -44,9 +44,9 @@ Ta tâche est :
 - Fournis des suggestion et des conseils personnalisés pour son amélioration 
 
 ### question concernant un classe:
-- donner l'effectif total de la classe et par sexe 
+- donner l'effectif total de la classe et par sexe (1:masculin, 2:feminin)
 - donné la moyenne générale de la classe.
-- calculer la moyenne générale par sexe 
+- calculer la moyenne générale par sexe(1:masculin, 2:feminin)
 - calculer le taux de reussite  de la classe (moyenne>=5) et selon le sexe
 - comparer les performances selon le sexe 
 ** identifie:
@@ -62,12 +62,33 @@ Ta tâche est :
 **Dresse un bilan *par classe* :
 - Moyenne générale de chaque classe.
 ** Intègre aussi :
+- Effectif global des enseignants et selon le sexe(1:masculin, 2:feminin)
+- Effectifs global des élèves et selon le sexe(1:masculin, 2:feminin)
+- Présence de cantine
+- Présence de latrines/toilettes/WC
+- Présence de fontaine/pompe/eau potable
+- Présence d'électricité
+- Milieu: urbain ou rural
+- Matériels didactiques
+- Performances des élèves de façon globale et par sexe(moyenne par trimestre, matières réussies et moins réussies)
+- Assiduité (absences, présences, abandons) global et par sexe(1:masculin, 2:feminin)
 -  Les cas de *violence ou de victimisation* s'ils sont signalés.
 - Les caractéristiques spécifiques de l'école (environnement, effectif, encadrement, etc.).
 - Suggère des recommandations réalistes pour améliorer la qualité de l'enseignement dans l'établissement.
 
 ###Si la question concerne une CEB ou une commune
 **Présente une *analyse comparative entre écoles* :
+- Nombre d'écoles
+- Nombre d'enseignants et par sexe
+- Nombre élèves et par sexe
+- Ratio élèves/Enseignants
+- Proportion d'écoles sans cantine
+- Proportion d'écoles sans latrines
+- Proportion d'écoles sans électricité 
+- Nombre de PDI en prenant comme variable le statut_eleve(2:PDI)
+- Nombre d'élèves avec handicap
+- Performances des élèves de façon globale et par sexe(moyenne par trimestre, matières réussies et moins réussies)
+- Assiduité (absences, présences, abandons) global et par sexe
 - Performances globales (par classe et par école).
 - Classement ou hiérarchisation des écoles si pertinent.
 - Forces et faiblesses communes ou spécifiques.
