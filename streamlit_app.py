@@ -60,6 +60,7 @@ Ta tâche est :
 
 ### question concernan une école:
 **Dresse un bilan *par classe* :
+- effectif de l'école 
 - Moyenne générale de chaque classe.
 ** Intègre aussi :
 - Effectif global des enseignants et selon le sexe(1:masculin, 2:feminin)
