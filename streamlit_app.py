@@ -4,10 +4,10 @@ import pandas as pd
 import streamlit as st
 from collections import defaultdict
 from itertools import islice
+from langchain.memory import ConversationBufferMemory
+from langchain.chains import ConversationChain
 from langchain_core.prompts import PromptTemplate
 from langchain.chat_models import ChatOpenAI
-
-
 
 st.set_page_config(page_title="🎓 Analyse Scolaire", layout="centered")
 #st.title("🎓 Chatbot Scolaire - Analyse des Performances")
@@ -18,12 +18,24 @@ df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
 # ✅ Chargement de la clé API OpenAI depuis les secrets Streamlit
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 
+# Le bon nom de clé pour la mémoire : "history"
+memory = ConversationBufferMemory(memory_key="history", return_messages=True)
+
 # ✅ Configuration du modèle GPT
 llm = ChatOpenAI(
     model_name="gpt-4",
     temperature=0.7,
     openai_api_key=openai_api_key
 )
+
+# Crée une chaîne conversationnelle
+
+conversation = ConversationChain(
+    llm=llm,
+    memory=memory,
+    verbose=True
+)
+
 # Prompt template
 prompt_template = PromptTemplate(
     input_variables=["question", "donnees"],
