@@ -258,23 +258,25 @@ def get_response_from_dataframe(question, df):
         return resultat.content if hasattr(resultat, 'content') else resultat
 
     return "Aucun filtre détecté dans la question. Veuillez spécifier un élève, une classe ou une école."
+# Configuration Streamlit
+st.title("🎓 Chatbot Scolaire - Performances Élève")
+
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-#  Formulaire avec champ texte et bouton Submit
-with st.form("formulaire_question"):
-    user_input = st.text_input("Pose ta question sur un élève, une école ou une classe")
-    submitted = st.form_submit_button("Submit")
+# Zone de saisie utilisateur
+user_input = st.chat_input("Pose une question ")
 
-#  Traitement après envoi
-if submitted and user_input:
+if user_input:
     response = get_response_from_dataframe(user_input, df)
+
+    # On stocke uniquement les messages (sans les afficher directement)
     st.session_state.chat_history.extend([
         {"role": "user", "content": user_input},
         {"role": "assistant", "content": response}
     ])
 
-# Affichage de l’historique
+# Affichage unique basé sur l’historique
 for message in st.session_state.chat_history:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
