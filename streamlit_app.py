@@ -10,7 +10,7 @@ from langchain.chat_models import ChatOpenAI
 
 
 st.set_page_config(page_title="🎓 Analyse Scolaire", layout="centered")
-st.title("🎓 Chatbot Scolaire - Analyse des Performances")
+#st.title("🎓 Chatbot Scolaire - Analyse des Performances")
 
 # ✅ Chargement et cache des données
 df=pd.read_csv("https://raw.githubusercontent.com/SomaDjakiss/Projet_ChatBot_Kix_Seeds/main/data_kix_seeds.csv",encoding="ISO-8859-1",sep=";")
